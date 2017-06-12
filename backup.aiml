@@ -1,0 +1,13 @@
+    <category>
+       <pattern>_ INGIN *</pattern>
+       <template>
+          kamu mau <set name="ACTION"><star index = "2"/></set> apa ?
+       </template>  
+    </category> 
+
+    <category>
+       <pattern>_ INGIN _ *</pattern>
+       <template>
+          kamu mau <get name="ACTION"/> <set name="NAME"><star index = "3"/></set> dimana ?
+       </template>  
+    </category> 

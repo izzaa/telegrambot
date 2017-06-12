@@ -1,0 +1,175 @@
+<aiml version="1.0.1" encoding="UTF-8">
+<!-- basic_chat.aiml -->
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Well, hello!
+        </template>
+    </category>
+    
+    <category>
+       <pattern>MY DOGS NAME IS *</pattern>
+       <template>
+          That is interesting that you have a dog named <set name="dog"><star/></set>
+       </template>  
+    </category>  
+    <category>
+       <pattern>WHAT IS MY DOGS NAME</pattern>
+       <template>
+          Your dog's name is <get name="dog"/>.
+       </template>  
+    </category>  
+    <category>
+       <pattern>GOT DOGS NAME</pattern>
+       <template>
+          we know your dogs name
+       </template>  
+    </category>  
+
+
+
+    <category>
+        <pattern>HALO</pattern>
+        <template>
+            Apa yang ingin kamu lakukan ?
+        </template>
+    </category>
+
+    <category>
+       <pattern>INGIN MAKAN</pattern>
+       <template>
+          <think><set name = "topic">makan</set></think>
+          <think><set name="ACTION">makan</set></think>
+          kamu mau makan apa ?
+       </template>
+    </category>
+
+    <category>
+       <pattern>_ INGIN MAKAN</pattern>
+       <template>
+          <srai>INGIN MAKAN</srai>
+       </template>
+    </category> 
+
+    <category>
+       <pattern>INGIN MAKAN *</pattern>
+       <template>
+          <think><set name="ACTION">makan</set></think>
+          kamu mau makan <set name="NAME"><star index = "1"/></set> dimana ?
+       </template>
+    </category>
+
+    <category>
+       <pattern>_ INGIN MAKAN *</pattern>
+       <template>
+            <srai>INGIN MAKAN <star index = "2"/></srai>
+       </template>
+    </category> 
+
+    <category>
+       <pattern>INGIN MAKAN * DI DEKAT SINI</pattern>
+       <template>
+          <think><set name="ACTION">makan</set></think>
+          <think><set name="NAME"><star index="1"/></set></think>
+          boleh kirimin lokasi kamu sekarang dimana ?
+       </template>
+    </category>
+
+    <category>
+       <pattern>_ INGIN MAKAN * DI DEKAT SINI</pattern>
+       <template>
+          <srai>INGIN MAKAN <star index="2"/> DI DEKAT SINI</srai>
+       </template>
+    </category>
+
+
+    <category>
+       <pattern>INGIN MAKAN * DI *</pattern>
+       <template>
+          <think><set name="ACTION">makan</set></think>
+          <think><set name="NAME"><star index="1"/></set></think>
+          <think><set name="LOCATION"><star index="2"/></set></think>
+          radius berapa meter yang bisa kamu terima dari <get name="LOCATION"/> ?
+       </template>
+    </category>
+
+    <category>
+       <pattern>_ INGIN MAKAN * DI *</pattern>
+       <template>
+          <srai>INGIN MAKAN <star index="2"/> DI <star index="3"/> </srai>
+       </template>
+    </category>
+
+    <category>
+       <pattern>ASK FOR RADIUS</pattern>
+       <template>
+          radius berapa meter yang bisa kamu terima dari situ ?
+       </template>
+    </category>
+
+    <category>
+       <pattern>DI SEKITAR *</pattern>
+       <template>
+          radius berapa meter yang bisa kamu terima dari <set name="LOCATION"></set> ?
+       </template>  
+    </category>
+
+    <category>
+       <pattern> * </pattern>
+       <that>
+          radius berapa meter yang bisa kamu terima dari *
+       </that>
+       <template>
+          <think><set name="RADIUS"></set></think>
+          oke, terimakasih infonya, sedang mencari..
+       </template>
+    </category>
+
+
+    <category>
+       <pattern>RADIUS * </pattern>
+       <that>
+          radius berapa meter yang bisa kamu terima dari *
+       </that>
+       <template>
+          <think><set name="RADIUS"></set></think>
+          oke, terimakasih infonya, sedang mencari..
+       </template>
+    </category>
+
+
+
+
+
+
+
+
+
+
+    <category>
+       <pattern>LOKASI * ADA DI *</pattern>
+       <template>
+          berapa radius yang bisa kamu terima?  
+          
+           <think><set name="LOCATION"><star index = "2"/></set></think>
+       </template>  
+    </category>  
+
+    <category>
+       <pattern>RADIUS * </pattern>
+       <template>
+          oke, terimakasih infonya, sedang mencari..  
+          <think><set name="RADIUS"><star index = "1"/></set></think>
+       </template>  
+    </category>  
+
+
+
+    <category>
+       <pattern>* </pattern>
+       <template>
+          <star/>
+       </template>  
+    </category> 
+</aiml>
