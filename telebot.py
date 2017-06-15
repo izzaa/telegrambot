@@ -29,7 +29,7 @@ def handle_food_bot(msg):
         response = place_searcher_bot.answer(chat_id, content_type, location)
 
     if response == place_searcher_bot.UNKNOWN_RESPONSE:
-	print(msg)
+        print(msg)
         slave_food_bot.forwardMessage(admin_channel, chat_id, msg["message_id"])
         response = APOLOGY
 

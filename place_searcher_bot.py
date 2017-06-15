@@ -22,7 +22,7 @@ action_place_type_map = {'makan': 'restaurant', 'liburan': 'zoo'}
 kernel = aiml.Kernel()
 kernel.learn("std-startup.xml")
 kernel.respond("load aiml b")
-kernel.loadSubs("normal.py")
+kernel.loadSubs("normal.txt")
 
 
 def extract_latitude_longitude(json_result):
