@@ -7,7 +7,7 @@ admin_food_bot = telepot.Bot('314066402:AAGwaAPKPkwZlD87H1_aY1ws0cxtEqgOlM4')
 admin_channel = -235455346
 slave_food_bot = telepot.Bot('382294505:AAHJ-9VomsZ8NPyVi2VU4PiPdrKKGARhdc4')
 
-APOLOGY = "Mohon tunggu beberapa saat, kami sedang mengontak admin untuk mendapatkan respon yang tepat"
+APOLOGY = "Mohon tunggu beberapa saat, tryan sedang sibuk di kamar mandi"
 
 
 def handle_food_bot(msg):
@@ -29,6 +29,7 @@ def handle_food_bot(msg):
         response = place_searcher_bot.answer(chat_id, content_type, location)
 
     if response == place_searcher_bot.UNKNOWN_RESPONSE:
+	print(msg)
         slave_food_bot.forwardMessage(admin_channel, chat_id, msg["message_id"])
         response = APOLOGY
 
@@ -37,7 +38,8 @@ def handle_food_bot(msg):
 
 
 def handle_admin_food_bot(msg):
-    chat_id = msg['from']['id']
+    print(msg)
+    chat_id = msg['reply_to_message']['forward_from']['id']
     response = msg['text']
     slave_food_bot.sendMessage(chat_id, response)
     username = msg["from"]["first_name"]

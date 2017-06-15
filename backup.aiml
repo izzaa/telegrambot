@@ -8,6 +8,6 @@
     <category>
        <pattern>_ INGIN _ *</pattern>
        <template>
-          kamu mau <get name="ACTION"/> <set name="NAME"><star index = "3"/></set> dimana ?
+          kamu mau <get name="ACTION"/> <set name="NAME"><star index = "3"/></set> tidur sama aku dimana ?
        </template>  
     </category> 
