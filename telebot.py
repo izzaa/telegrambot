@@ -4,8 +4,7 @@ import telepot
 from telepot.loop import MessageLoop
 
 admin_channel = -235455346
-# slave_food_bot = telepot.Bot('382294505:AAHJ-9VomsZ8NPyVi2VU4PiPdrKKGARhdc4')
-slave_food_bot = telepot.Bot('224991653:AAFvbFgD5WxF6o3dERRT7antDkjd_djH-U4')
+slave_food_bot = telepot.Bot('382294505:AAHJ-9VomsZ8NPyVi2VU4PiPdrKKGARhdc4')
 
 APOLOGY = "Mohon tunggu beberapa saat, kami sedang mengontak admin untuk mendapatkan respon yang tepat"
 
