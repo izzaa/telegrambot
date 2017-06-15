@@ -3,9 +3,9 @@ import telepot
 
 from telepot.loop import MessageLoop
 
-admin_food_bot = telepot.Bot('314066402:AAGwaAPKPkwZlD87H1_aY1ws0cxtEqgOlM4')
 admin_channel = -235455346
-slave_food_bot = telepot.Bot('382294505:AAHJ-9VomsZ8NPyVi2VU4PiPdrKKGARhdc4')
+# slave_food_bot = telepot.Bot('382294505:AAHJ-9VomsZ8NPyVi2VU4PiPdrKKGARhdc4')
+slave_food_bot = telepot.Bot('224991653:AAFvbFgD5WxF6o3dERRT7antDkjd_djH-U4')
 
 APOLOGY = "Mohon tunggu beberapa saat, tryan sedang sibuk di kamar mandi"
 
